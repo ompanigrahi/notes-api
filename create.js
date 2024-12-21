@@ -7,11 +7,11 @@ export const main = handler(async (event, context) => {
         TableName: process.env.tableName,
         Item: {
             // Theattributesoftheitemto be created
-            userId: "123", //Theidof the author
-            noteId: uuid.v1(), //Auniqueuuid
-            content: data.content, //Parsedfrom requestbody
-            attachment: data.attachment,//Parsedfromrequestbody
-            createdAt: Date.now(), //Current Unixtimestamp
+            userId: event.requestContext.identity.cognitoIdentityId, //The id of the author
+            noteId: uuid.v1(), //A unique uuid
+            content: data.content, //Parsed from request body
+            attachment: data.attachment,//Parsed from request body
+            createdAt: Date.now(), //Current Unix time stamp
         },
     };
     await dynamoDb.put(params);
