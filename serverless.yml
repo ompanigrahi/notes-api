@@ -1,4 +1,4 @@
-service: notes-api
+service: notes-app-uploads-api
 
 # Create an optimized package for our functions
 
