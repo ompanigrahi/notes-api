@@ -1,4 +1,4 @@
-service: notes-app-uploads-api
+service: notes-api
 
 # Create an optimized package for our functions
 
@@ -32,7 +32,7 @@ provider:
   # under process.env.
 
   environment:
-    tableName: notes-app-uploads
+    tableName: om-note-app-upload
 
 # 'iamRoleStatements' defines the permission policy for the Lambda function.
 # In this case Lambda functions are granted with permissions to access DynamoDB.
